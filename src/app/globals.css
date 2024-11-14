@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
 
 :root {
   --background: #ffffff;
@@ -24,4 +25,297 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+* {
+  font-family: "Sawarabi Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.page1 {
+  background-color:#54473F;
+  height: 300vh;
+  width: 100%;
+  position: absolute;
+}
+
+.page2 {
+  width: 100%;
+  height: 300vh;
+  top: 200%;
+  position: absolute;
+  z-index: 20;
+  background-color: #F4BEDD;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  top: 0;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: #9A7E6F;
+  color: #54473F;
+  position: fixed;
+  z-index: 100;
+  transition: .2s;
+  box-shadow: 0 4px 20px #302218;
+}
+
+
+.content {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  padding: 0 150px;
+  top: 100px;
+
+}
+
+.section1 {
+  width: 100%;
+  height: 760px;
+  gap: 100px;
+  position: relative;
+  padding: 100px 0;
+}
+
+.section1 .oiwa {
+  position: absolute;
+  font-size: 11rem;
+  color: white;
+  top: 0;
+  right: 116px;
+  text-shadow: 10px 20px 20px  #19130e;
+  transition: 1s ease;
+  z-index: 100;
+}
+
+.section1 .img1 {
+  position: relative;
+  width: 400px;
+  height:100%;
+  left: 0;
+  top: 0px;
+  border-radius: 20px;
+  transition: .6s;
+}
+
+.section1 .mask1 {
+  opacity: 0;
+  transition: 1s ease;
+  color: #ededed;
+  height: 100%;
+}
+.section1 .mask1 .mask1Content {
+  padding: 50px;
+}
+.section1 .mask1 .mask1h1 {
+  font-size: 3rem;
+}
+
+
+.section1 .mask1.hovered  {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  background: rgba(15, 12, 8, 0.8);
+  z-index: 999;
+  border-radius: 20px;
+  opacity: 1;
+}
+
+.section1 .mask2 {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  z-index: 999;
+  top: 0;
+
+}
+.section1 .mask2 .mask2Content {
+  animation: hoverMe 2s ease infinite;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.section1 .mask2 .mask2Content .mask2Text {
+  color: #fcded2;
+  text-shadow: 0 4px 10px black, 0 4px 2px black;
+}
+
+@keyframes hoverMe {
+  0%,100%{
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.section1 .img1-1 {
+  position: absolute;
+  border-radius: 20px;
+  box-shadow: 0 3px 30px #19130e;
+  transition: .6s;
+}
+
+.section1 .img1-2 {
+  position: absolute;
+  right: 0;
+  top: 248px;
+  border-radius: 30px;
+  box-shadow: 0 2px 31px #1c1610;
+  transition: .6s;
+}
+
+.section2 {
+  display: flex;
+  justify-content: center;
+  transition: .1s ease;
+  opacity: 0;
+  position: relative;
+  top: 200px;/*scrolltriggerの初期値*/
+}
+
+.section2 .h1 {
+  color: white;
+  position: absolute;
+  z-index: 1;
+  font-size: 4rem;
+}
+
+.section2 .img2 {
+  position: absolute;
+  box-shadow: 0 10px 20px rgb(88, 22, 68);
+  border-radius: 20px;
+}
+
+.circleContainer {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  top: 200px;
+}
+.circle {
+  width: 0px;
+  height: 0px;
+  background-color: #F4BEDD;
+  position: absolute;
+  border-radius: 50%;
+  transition: 0.1s;
+}
+
+
+.scrolled {
+  background-color: #ffedf7;
+  color: #F4BEDD;
+  box-shadow: 0 10px 20px#7e5a75;
+  animation: ani2 3s ease;
+}
+
+.scrolled .circled {
+  border: 1px solid  rgb(157, 81, 157);
+}
+
+.scrolled .line {
+  border-bottom: 1px solid rgb(157, 81, 157);
+}
+
+.minicircle {
+  width: 0;
+  height: 0;
+  border: 0px solid #ffd7c2;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 5s ease;
+  z-index: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home {
+  position: relative;
+  transition: .5s ease;
+}
+.products {
+  position: relative;
+  transition: .5s ease;
+}
+.contact {
+  position: relative;
+  transition: .5s ease;
+}
+
+.home:hover {
+  color: #ffffff;
+}
+.products:hover {
+  color: #ffffff;
+}
+.contact:hover {
+  color: #ffffff;
+}
+
+.scrolled .home:hover{
+  color: rgb(157, 81, 157);
+}
+.scrolled .products:hover {
+  color: rgb(157, 81, 157);
+}
+.scrolled .contact:hover {
+  color: rgb(157, 81, 157);
+}
+.circled {
+  z-index: 900;
+  animation: ani 5s ease;
+}
+
+@keyframes ani {
+  to {
+    width: 2600px;
+    height: 2600px;
+    border: 4px solid #e9bda8;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 10s ease;
+  }
+}
+
+/*起きたらこのcircledのスタイルを変えるのと、細かいとこの続きを書く。一旦完成したらexpress久しぶりにやりたい。*/
+/* 画像にカーソル合わせたら文字出すようにしよう。今回のは正直気に入ってる */
+
+.line {
+  border-bottom:1px solid #3e3834;
+  transition: .5s ease;
+}
+
+
+.hovered {
+
 }
